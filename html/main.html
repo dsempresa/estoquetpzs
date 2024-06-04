@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estoque</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .action-group {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px 0;
+        }
+        .action-group input {
+            width: calc(100% - 10px);
+            margin: 5px 5px 5px 0;
+        }
+        .action-group button {
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+                border: none;
+            }
+            table, th, td {
+                font-size: 14px;
+                padding: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Estoque</h1>
+        <div class="actions">
+            <div class="action-group">
+                <input type="text" id="item-name" placeholder="Nome do item">
+                <input type="number" id="item-quantity" placeholder="Quantidade">
+                <button onclick="addItem()">Adicionar Item</button>
+            </div>
+            <div class="action-group">
+                <input type="text" id="item-name-remove" placeholder="Nome do item">
+                <input type="number" id="item-quantity-remove" placeholder="Quantidade">
+                <button onclick="removeItem()">Remover Item</button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody id="inventory">
+                <!-- Itens do estoque serão adicionados aqui -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
